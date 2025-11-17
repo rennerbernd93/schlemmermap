@@ -1,12 +1,14 @@
 {
   "ExpandedNodes": [
     "",
+    "\\components",
+    "\\lib",
     "\\pages",
     "\\pages\\admin",
     "\\pages\\api",
     "\\pages\\api\\restaurants",
     "\\prisma"
   ],
-  "SelectedNode": "\\next.config.js",
+  "SelectedNode": "\\lib\\mail.js",
   "PreviewInSolutionExplorer": false
 }

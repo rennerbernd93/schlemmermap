@@ -110,7 +110,7 @@ const infoContent = `
 )} km</span><br/><br/>
 ${
 r.menuUrl
-? `<a href="${r.menuUrl}" target="_blank">Speisekarte öffnen</a><br/>`
+? `<a href="${r.menuUrl}" target="_blank">Speisekarte Ã¶ffnen</a><br/>`
 : ""
 }
 ${
@@ -156,13 +156,13 @@ async function fetchBanners(lat, lng) {
     return;
   }
 
-  // Entfernung für jedes Banner berechnen
+  // Entfernung fÃ¼r jedes Banner berechnen
   const withDistance = found.map((ad) => ({
     ...ad,
     distance: haversine(lat, lng, ad.lat, ad.lng),
   }));
 
-  // Nächste zuerst
+  // NÃ¤chste zuerst
   withDistance.sort((a, b) => a.distance - b.distance);
 
   setBanners(withDistance);      // keine Begrenzung, wir rotieren
@@ -191,7 +191,7 @@ return (
       }}
     />
 
-    {/* Banner-Bereich ÜBER der Map */}
+    {/* Banner-Bereich ÃœBER der Map */}
     <div
       style={{
         width: "100%",
@@ -201,7 +201,7 @@ return (
       }}
     >
       {banners.length === 0 && (
-        <div>Keine Werbung in deiner Nähe</div>
+        <div>Keine Werbung in deiner NÃ¤he</div>
       )}
 
       {banners.length > 0 && (
