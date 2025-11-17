@@ -4,12 +4,10 @@
     "\\components",
     "\\lib",
     "\\pages",
-    "\\pages\\admin",
-    "\\pages\\api",
     "\\pages\\api\\ads",
     "\\pages\\api\\restaurants",
     "\\prisma"
   ],
-  "SelectedNode": "\\pages\\api\\ads\\pay.js",
+  "SelectedNode": "\\pages\\request-password.js",
   "PreviewInSolutionExplorer": false
 }
