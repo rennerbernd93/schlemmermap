@@ -1,0 +1,39 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Restaurant {
+  id        Int      @id @default(autoincrement())
+  name      String
+  latitude  Float
+  longitude Float
+  menuUrl   String?
+  website   String?
+  phone     String?
+  active    Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+model AdCampaign {
+  id            Int      @id @default(autoincrement())
+  imageUrl      String
+  ctaUrl        String?
+  lat           Float
+  lng           Float
+  paymentStatus String    @default("pending")
+  isActive      Boolean   @default(false)
+  createdBy     String    @default("user")
+  expiresAt     DateTime?
+  createdAt     DateTime  @default(now())
+}
+
+model PasswordRequest {
+  id        Int      @id @default(autoincrement())
+  email     String
+  createdAt DateTime @default(now())
+}
