@@ -1,47 +1,45 @@
-import bcrypt from "bcrypt";
-import { serialize } from "cookie";
+import { prisma } from "../../../lib/prisma";
+import bcrypt from "bcryptjs"; // ← WICHTIG: bcryptjs statt bcrypt!
+import cookie from "cookie";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
-    return res.status(405).json({ error: "Method not allowed" });
+    return res.status(405).json({ message: "Method not allowed" });
   }
 
   const { username, password } = req.body;
-
-  // Sicherheitscheck
   if (!username || !password) {
-    return res.status(400).json({ error: "Missing credentials" });
+    return res.status(400).json({ message: "Bitte Benutzername und Passwort eingeben." });
   }
 
-  // Admin-Daten aus ENV
-  const ADMIN_USERNAME = process.env.ADMIN_USERNAME;
-  const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
+  try {
+    const admin = await prisma.admin.findUnique({
+      where: { username },
+    });
 
-  if (!ADMIN_USERNAME || !ADMIN_PASSWORD) {
-    return res.status(500).json({ error: "Admin credentials missing in ENV" });
-  }
+    if (!admin) {
+      return res.status(401).json({ message: "Ungültige Zugangsdaten." });
+    }
 
-  // Prüfung Benutzername
-  if (username !== ADMIN_USERNAME) {
-    return res.status(401).json({ error: "Invalid username" });
-  }
+    const isValid = await bcrypt.compare(password, admin.password);
+    if (!isValid) {
+      return res.status(401).json({ message: "Ungültige Zugangsdaten." });
+    }
 
-  // Passwort-Vergleich (wenn du kein Hash nutzt → direkter Vergleich)
-  if (password !== ADMIN_PASSWORD) {
-    return res.status(401).json({ error: "Invalid password" });
-  }
+    const token = Buffer.from(`${admin.username}:${Date.now()}`).toString("base64");
 
-  // Setze Login-Cookie (7 Tage gültig)
-  res.setHeader(
-    "Set-Cookie",
-    serialize("admin_session", "logged_in", {
-      path: "/",
+    res.setHeader("Set-Cookie", cookie.serialize("admin_token", token, {
       httpOnly: true,
-      sameSite: "lax",
       secure: process.env.NODE_ENV === "production",
-      maxAge: 7 * 24 * 60 * 60,
-    })
-  );
+      sameSite: "strict",
+      path: "/",
+      maxAge: 60 * 60 * 12 // 12h Login
+    }));
 
-  return res.status(200).json({ success: true });
+    return res.status(200).json({ message: "Login erfolgreich." });
+
+  } catch (error) {
+    console.error("Login Fehler:", error);
+    return res.status(500).json({ message: "Serverfehler." });
+  }
 }
