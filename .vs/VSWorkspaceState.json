@@ -6,9 +6,10 @@
     "\\pages",
     "\\pages\\admin",
     "\\pages\\api",
+    "\\pages\\api\\ads",
     "\\pages\\api\\restaurants",
     "\\prisma"
   ],
-  "SelectedNode": "\\lib\\mail.js",
+  "SelectedNode": "\\lib\\prisma.js",
   "PreviewInSolutionExplorer": false
 }

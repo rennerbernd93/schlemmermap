@@ -1,12 +1,88 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\lib\\mail.js||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:lib\\mail.js||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\lib\\prisma.js||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:lib\\prisma.js||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\lib\\supabase.js||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:lib\\supabase.js||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\pages\\admin\\ads.js||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:pages\\admin\\ads.js||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "mail.js",
+              "DocumentMoniker": "C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\lib\\mail.js",
+              "RelativeDocumentMoniker": "lib\\mail.js",
+              "ToolTip": "C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\lib\\mail.js",
+              "RelativeToolTip": "lib\\mail.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-17T22:19:54.443Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ads.js",
+              "DocumentMoniker": "C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\pages\\admin\\ads.js",
+              "RelativeDocumentMoniker": "pages\\admin\\ads.js",
+              "ToolTip": "C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\pages\\admin\\ads.js",
+              "RelativeToolTip": "pages\\admin\\ads.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-17T22:19:44.706Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "supabase.js",
+              "DocumentMoniker": "C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\lib\\supabase.js",
+              "RelativeDocumentMoniker": "lib\\supabase.js",
+              "ToolTip": "C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\lib\\supabase.js",
+              "RelativeToolTip": "lib\\supabase.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-17T22:19:42.361Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "prisma.js",
+              "DocumentMoniker": "C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\lib\\prisma.js",
+              "RelativeDocumentMoniker": "lib\\prisma.js",
+              "ToolTip": "C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\lib\\prisma.js",
+              "RelativeToolTip": "lib\\prisma.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-17T22:19:35.31Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

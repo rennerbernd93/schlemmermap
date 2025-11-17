@@ -5,6 +5,6 @@ export defexport default function handler(req, res) {
   const paypalMe = process.env.PAYPAL_ME;
   if (!paypalMe) return res.status(500).send("PAYPAL_ME fehlt in .env");
 
-  // 1 € Zahlung
+  // 1 â‚¬ Zahlung
   return res.redirect(`https://www.paypal.me/${paypalMe}/1`);
 }
