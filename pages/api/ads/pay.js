@@ -1,10 +1,20 @@
-export defexport default function handler(req, res) {
+import prisma from "../../../../lib/prisma";
+
+export default async function handler(req, res) {
   const { id } = req.query;
-  if (!id) return res.status(400).send("Keine Ad-ID");
 
-  const paypalMe = process.env.PAYPAL_ME;
-  if (!paypalMe) return res.status(500).send("PAYPAL_ME fehlt in .env");
+  if (!id) return res.status(400).send("Keine Ad-ID übergeben");
 
-  // 1 € Zahlung
-  return res.redirect(`https://www.paypal.me/${paypalMe}/1`);
+  try {
+    const ad = await prisma.ad.findUnique({
+      where: { id: Number(id) },
+    });
+
+    if (!ad) return res.status(404).send("Banner nicht gefunden");
+
+    return res.status(200).json(ad);
+  } catch (err) {
+    console.error(err);
+    return res.status(500).send("Serverfehler");
+  }
 }
