@@ -1,4 +1,4 @@
-﻿import formidable from "formidable";
+import formidable from "formidable";
 import fs from "fs";
 import prisma from "../../lib/prisma";
 import supabase from "../../lib/supabase";

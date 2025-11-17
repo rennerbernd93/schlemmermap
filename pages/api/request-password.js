@@ -1,4 +1,4 @@
-﻿import prisma from "../../lib/prisma";
+import prisma from "../../lib/prisma";
 import { sendUserPassword } from "../../lib/mail";
 
 export default async function handler(req, res) {
