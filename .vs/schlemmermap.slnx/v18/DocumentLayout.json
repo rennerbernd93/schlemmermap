@@ -3,60 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\lib\\prisma.js||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:lib\\prisma.js||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\components\\MapWithBanners.js||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:components\\MapWithBanners.js||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\lib\\mail.js||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:lib\\mail.js||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\lib\\supabase.js||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:lib\\supabase.js||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\pages\\admin\\ads.js||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:pages\\admin\\ads.js||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\pages\\admin\\index.js||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:pages\\admin\\index.js||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\pages\\index.js||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:pages\\index.js||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\pages\\buy-ad.js||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:pages\\buy-ad.js||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\pages\\add-menu.js||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:pages\\add-menu.js||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\pages\\api\\upload-menu.js||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:pages\\api\\upload-menu.js||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\pages\\api\\request-password.js||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:pages\\api\\request-password.js||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\pages\\api\\restaurants\\public.js||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:pages\\api\\restaurants\\public.js||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\pages\\api\\ads\\uploads.js||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:pages\\api\\ads\\uploads.js||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\pages\\api\\ads\\nearby.js||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:pages\\api\\ads\\nearby.js||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\pages\\api\\ads\\pay.js||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:pages\\api\\ads\\pay.js||{3B902123-F8A7-4915-9F01-361F908088D0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,188 +14,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "mail.js",
-              "DocumentMoniker": "C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\lib\\mail.js",
-              "RelativeDocumentMoniker": "lib\\mail.js",
-              "ToolTip": "C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\lib\\mail.js",
-              "RelativeToolTip": "lib\\mail.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-11-17T22:26:29.705Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "prisma.js",
-              "DocumentMoniker": "C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\lib\\prisma.js",
-              "RelativeDocumentMoniker": "lib\\prisma.js",
-              "ToolTip": "C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\lib\\prisma.js",
-              "RelativeToolTip": "lib\\prisma.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Title": "pay.js",
+              "DocumentMoniker": "C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\pages\\api\\ads\\pay.js",
+              "RelativeDocumentMoniker": "pages\\api\\ads\\pay.js",
+              "ToolTip": "C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\pages\\api\\ads\\pay.js",
+              "RelativeToolTip": "pages\\api\\ads\\pay.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-11-17T22:26:25.017Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "supabase.js",
-              "DocumentMoniker": "C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\lib\\supabase.js",
-              "RelativeDocumentMoniker": "lib\\supabase.js",
-              "ToolTip": "C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\lib\\supabase.js",
-              "RelativeToolTip": "lib\\supabase.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-11-17T22:26:21.76Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ads.js",
-              "DocumentMoniker": "C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\pages\\admin\\ads.js",
-              "RelativeDocumentMoniker": "pages\\admin\\ads.js",
-              "ToolTip": "C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\pages\\admin\\ads.js",
-              "RelativeToolTip": "pages\\admin\\ads.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-11-17T22:26:20.794Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "index.js",
-              "DocumentMoniker": "C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\pages\\admin\\index.js",
-              "RelativeDocumentMoniker": "pages\\admin\\index.js",
-              "ToolTip": "C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\pages\\admin\\index.js",
-              "RelativeToolTip": "pages\\admin\\index.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-11-17T22:26:20.079Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "index.js",
-              "DocumentMoniker": "C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\pages\\index.js",
-              "RelativeDocumentMoniker": "pages\\index.js",
-              "ToolTip": "C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\pages\\index.js",
-              "RelativeToolTip": "pages\\index.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-11-17T22:26:18.968Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "buy-ad.js",
-              "DocumentMoniker": "C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\pages\\buy-ad.js",
-              "RelativeDocumentMoniker": "pages\\buy-ad.js",
-              "ToolTip": "C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\pages\\buy-ad.js",
-              "RelativeToolTip": "pages\\buy-ad.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-11-17T22:26:18.405Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MapWithBanners.js",
-              "DocumentMoniker": "C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\components\\MapWithBanners.js",
-              "RelativeDocumentMoniker": "components\\MapWithBanners.js",
-              "ToolTip": "C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\components\\MapWithBanners.js",
-              "RelativeToolTip": "components\\MapWithBanners.js",
-              "ViewState": "AgIAAPAAAAAAAAAAAAAAABUBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-11-17T22:24:20.937Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "add-menu.js",
-              "DocumentMoniker": "C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\pages\\add-menu.js",
-              "RelativeDocumentMoniker": "pages\\add-menu.js",
-              "ToolTip": "C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\pages\\add-menu.js",
-              "RelativeToolTip": "pages\\add-menu.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-11-17T22:26:17.647Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "upload-menu.js",
-              "DocumentMoniker": "C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\pages\\api\\upload-menu.js",
-              "RelativeDocumentMoniker": "pages\\api\\upload-menu.js",
-              "ToolTip": "C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\pages\\api\\upload-menu.js",
-              "RelativeToolTip": "pages\\api\\upload-menu.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-11-17T22:26:15.944Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "request-password.js",
-              "DocumentMoniker": "C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\pages\\api\\request-password.js",
-              "RelativeDocumentMoniker": "pages\\api\\request-password.js",
-              "ToolTip": "C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\pages\\api\\request-password.js",
-              "RelativeToolTip": "pages\\api\\request-password.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-11-17T22:26:11.878Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "public.js",
-              "DocumentMoniker": "C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\pages\\api\\restaurants\\public.js",
-              "RelativeDocumentMoniker": "pages\\api\\restaurants\\public.js",
-              "ToolTip": "C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\pages\\api\\restaurants\\public.js",
-              "RelativeToolTip": "pages\\api\\restaurants\\public.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-11-17T22:26:08.095Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "uploads.js",
-              "DocumentMoniker": "C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\pages\\api\\ads\\uploads.js",
-              "RelativeDocumentMoniker": "pages\\api\\ads\\uploads.js",
-              "ToolTip": "C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\pages\\api\\ads\\uploads.js",
-              "RelativeToolTip": "pages\\api\\ads\\uploads.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-11-17T22:26:04.649Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "nearby.js",
-              "DocumentMoniker": "C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\pages\\api\\ads\\nearby.js",
-              "RelativeDocumentMoniker": "pages\\api\\ads\\nearby.js",
-              "ToolTip": "C:\\Users\\Bernd.Renner\\Desktop\\schlemmermap\\pages\\api\\ads\\nearby.js",
-              "RelativeToolTip": "pages\\api\\ads\\nearby.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-11-17T22:26:01.481Z",
+              "WhenOpened": "2025-11-17T22:48:08.766Z",
               "EditorCaption": ""
             }
           ]
