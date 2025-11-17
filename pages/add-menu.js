@@ -1,4 +1,4 @@
-import { useState } from "react";
+ï»¿import { useState } from "react";
 
 export default function AddMenuPage() {
 const [form, setForm] = useState({
@@ -49,7 +49,7 @@ return (
 <p>
 Du kannst hier einen Mittagstisch als Datei, Link oder telefonisch
 eintragen. Bei Upload mit dem normalen Passwort wird dein Eintrag vom
-Admin geprüft.
+Admin geprï¿½ft.
 </p>
 
 <form onSubmit={handleSubmit}>
@@ -74,7 +74,7 @@ required
 </div>
 
 <div style={{ marginBottom: 10 }}>
-<label>Längengrad (lng)</label>
+<label>Lï¿½ngengrad (lng)</label>
 <input
 name="longitude"
 value={form.longitude}
@@ -93,7 +93,7 @@ onChange={updateField}
 </div>
 
 <div style={{ marginBottom: 10 }}>
-<label>Telefonnummer (für telefonische Speisekarte)</label>
+<label>Telefonnummer (fï¿½r telefonische Speisekarte)</label>
 <input name="phone" value={form.phone} onChange={updateField} />
 </div>
 

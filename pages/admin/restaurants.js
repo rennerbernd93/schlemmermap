@@ -1,4 +1,4 @@
-import prisma from "../../../lib/prisma";
+ï»¿import prisma from "../../../lib/prisma";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") return res.status(405).end();
@@ -23,7 +23,7 @@ export default async function handler(req, res) {
       where: { id: restaurantId },
     });
   } else {
-    return res.status(400).json({ error: "Ungültige Aktion" });
+    return res.status(400).json({ error: "Ungï¿½ltige Aktion" });
   }
 
   res.status(200).json({ success: true });

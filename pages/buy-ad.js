@@ -1,4 +1,4 @@
-import { useState } from "react";
+ï»¿import { useState } from "react";
 
 export default function BuyAdPage() {
 const [form, setForm] = useState({
@@ -18,7 +18,7 @@ setForm({ ...form, [e.target.name]: e.target.value });
 
 async function handleUpload(e) {
 e.preventDefault();
-setStatus("Bitte warten…");
+setStatus("Bitte wartenï¿½");
 
 const fd = new FormData();
 fd.append("name", form.name);
@@ -37,7 +37,7 @@ const json = await res.json();
 if (!res.ok) {
 setStatus("Fehler: " + (json.error || "Unbekannt"));
 } else {
-setStatus("Banner hochgeladen – jetzt bezahlen!");
+setStatus("Banner hochgeladen ï¿½ jetzt bezahlen!");
 setAdId(json.id);
 }
 }
@@ -51,7 +51,7 @@ return (
 <div style={{ maxWidth: 600, margin: "0 auto", padding: 16 }}>
 <h1>Werbebanner buchen</h1>
 <p>
-Lade hier dein Banner hoch. Es wird den Nutzern in der Nähe für 7 Tage angezeigt.
+Lade hier dein Banner hoch. Es wird den Nutzern in der Nï¿½he fï¿½r 7 Tage angezeigt.
 </p>
 
 <form onSubmit={handleUpload}>
@@ -76,7 +76,7 @@ required
 </div>
 
 <div>
-<label>Längengrad (lng)</label>
+<label>Lï¿½ngengrad (lng)</label>
 <input
 name="longitude"
 value={form.longitude}
@@ -86,7 +86,7 @@ required
 </div>
 
 <div>
-<label>Link (optional – z.B. Website)</label>
+<label>Link (optional ï¿½ z.B. Website)</label>
 <input
 name="ctaUrl"
 value={form.ctaUrl}
@@ -122,7 +122,7 @@ border: "1px solid #aaa",
 cursor: "pointer",
 }}
 >
-Jetzt bezahlen (1 € / Woche)
+Jetzt bezahlen (1 ï¿½ / Woche)
 </button>
 )}
 </div>

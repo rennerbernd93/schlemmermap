@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+ï»¿import { useState, useEffect } from "react";
 
 export default function AdminPanel() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -98,7 +98,7 @@ export default function AdminPanel() {
           key={r.id}
           style={{ padding: 10, borderBottom: "1px solid #ccc" }}
         >
-          <b>{r.name}</b> – aktiv: {r.active ? "Ja" : "Nein"}
+          <b>{r.name}</b> ï¿½ aktiv: {r.active ? "Ja" : "Nein"}
           <div style={{ marginTop: 6 }}>
             {!r.active && (
               <button
@@ -115,7 +115,7 @@ export default function AdminPanel() {
               Deaktivieren
             </button>
             <button onClick={() => restaurantAction(r.id, "delete")}>
-              Löschen
+              Lï¿½schen
             </button>
           </div>
         </div>
@@ -127,7 +127,7 @@ export default function AdminPanel() {
           key={a.id}
           style={{ padding: 10, borderBottom: "1px solid #ccc" }}
         >
-          <b>Banner #{a.id}</b> – aktiv: {a.isActive ? "Ja" : "Nein"}
+          <b>Banner #{a.id}</b> ï¿½ aktiv: {a.isActive ? "Ja" : "Nein"}
           <div style={{ marginTop: 6 }}>
             {!a.isActive && (
               <button
@@ -138,7 +138,7 @@ export default function AdminPanel() {
               </button>
             )}
             <button onClick={() => adAction(a.id, "delete")}>
-              Löschen
+              Lï¿½schen
             </button>
           </div>
         </div>
