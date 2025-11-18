@@ -1,26 +1,50 @@
+
 import dynamic from "next/dynamic";
 
-const MapWithBanners = dynamic(
-() => import("../components/MapWithBanners"),
-{ ssr: false }
-);
+const MapSearch = dynamic(() => import("../components/MapSearch"), {
+  ssr: false,
+});
 
 export default function Home() {
-return (
-<div style={{ maxWidth: 1000, margin: "0 auto", padding: 16 }}>
-<h1>Schlemmermap</h1>
-<p>Mittagsmen�s im Umkreis � klick auf einen Stern in der Karte.</p>
+  return (
+    <div style={{ maxWidth: 1000, margin: "0 auto", padding: 16 }}>
+      
+      {/* LOGO */}
+      <div style={{ textAlign: "center", marginTop: 20, marginBottom: 20 }}>
+        <img
+          src="/logo.png"
+          alt="Schlemmermap Logo"
+          style={{ width: 180, maxWidth: "80%", height: "auto" }}
+        />
+      </div>
 
-<div style={{ margin: "12px 0", display: "flex", gap: 12 }}>
-<a href="/add-menu" style={{ textDecoration: "underline" }}>
-Speisekarte hinzuf�gen
-</a>
-<a href="/buy-ad" style={{ textDecoration: "underline" }}>
-Werbung buchen
-</a>
-</div>
+      <h2 style={{ textAlign: "center", marginBottom: 10 }}>
+        Finde Mittagstische in deiner Nähe
+      </h2>
 
-<MapWithBanners />
-</div>
-);
+      <p style={{ textAlign: "center", marginBottom: 20 }}>
+        Standort verwenden oder Ort eingeben.
+      </p>
+
+      {/* Karte ohne Klickfunktion */}
+      <MapSearch />
+
+      {/* Link zur neuen Seite */}
+      <div style={{ textAlign: "center", marginTop: 20 }}>
+        <a
+          href="/add-menu-map"
+          style={{
+            display: "inline-block",
+            padding: "10px 20px",
+            background: "black",
+            color: "white",
+            borderRadius: 6,
+            textDecoration: "none",
+          }}
+        >
+          🍽️ Mittagstisch hinzufügen
+        </a>
+      </div>
+    </div>
+  );
 }

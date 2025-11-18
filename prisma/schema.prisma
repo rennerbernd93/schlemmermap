@@ -15,21 +15,21 @@ model Restaurant {
   menuUrl   String?
   website   String?
   phone     String?
-  active    Boolean  @default(false)
   createdAt DateTime @default(now())
 }
 
-model AdCampaign {
-  id            Int      @id @default(autoincrement())
-  imageUrl      String
-  ctaUrl        String?
-  lat           Float
-  lng           Float
-  paymentStatus String    @default("pending")
-  isActive      Boolean   @default(false)
-  createdBy     String    @default("user")
-  expiresAt     DateTime?
-  createdAt     DateTime  @default(now())
+model Ad {
+  id           Int       @id @default(autoincrement())
+  imageUrl     String
+  ctaUrl       String?
+  lat          Float?
+  lng          Float?
+  radius       Int?      @default(50000)
+  createdBy    String    @default("admin")
+  paymentStatus String?  @default("pending")
+  isActive     Boolean   @default(true)
+  expiresAt    DateTime?
+  createdAt    DateTime  @default(now())
 }
 
 model PasswordRequest {

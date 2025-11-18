@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 
-export default function MapWithBanners() {
+export default function MapWithBanners({ onUserClick }) {
   const mapRef = useRef(null);
   const inputRef = useRef(null);
 
@@ -11,11 +11,12 @@ export default function MapWithBanners() {
   });
 
   const [banners, setBanners] = useState([]);
+  const [adminBanners, setAdminBanners] = useState([]);
   const [currentBannerIndex, setCurrentBannerIndex] = useState(0);
+  const [mode, setMode] = useState("nearby");
 
   const STAR_ICON = "https://maps.google.com/mapfiles/kml/shapes/star.png";
 
-  /** Kleine Hilfsfunktionen */
   function toRad(x) {
     return (x * Math.PI) / 180;
   }
@@ -32,7 +33,6 @@ export default function MapWithBanners() {
     return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
   }
 
-  /** GOOGLE MAPS LADEN */
   useEffect(() => {
     const s = document.createElement("script");
     s.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_MAPS_KEY}&libraries=places`;
@@ -48,18 +48,41 @@ export default function MapWithBanners() {
     };
   }, []);
 
-  /** GOOGLE MAP INITIALISIEREN */
   async function initMap() {
     const m = new window.google.maps.Map(mapRef.current, {
       center: userLocation,
       zoom: 12,
     });
 
-    /** Autocomplete */
+    // ----- CLICK HANDLING -----
+    let clickMarker = null;
+
+    m.addListener("click", (e) => {
+      const lat = e.latLng.lat();
+      const lng = e.latLng.lng();
+
+      // alten Marker entfernen
+      if (clickMarker) clickMarker.setMap(null);
+
+      // neuen Marker setzen
+      clickMarker = new window.google.maps.Marker({
+        position: { lat, lng },
+        map: m,
+        animation: window.google.maps.Animation.DROP,
+      });
+
+      // Koordinaten via Callback an Index.js senden
+      if (typeof onUserClick === "function") {
+        onUserClick({ lat, lng });
+      }
+    });
+
+    // ----- AUTOCOMPLETE -----
     const autocomplete = new window.google.maps.places.Autocomplete(
       inputRef.current
     );
     autocomplete.bindTo("bounds", m);
+
     autocomplete.addListener("place_changed", () => {
       const place = autocomplete.getPlace();
       if (!place.geometry) return;
@@ -67,7 +90,7 @@ export default function MapWithBanners() {
       m.setZoom(15);
     });
 
-    /** User Location (GPS) */
+    // ----- GEOLOCATION -----
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((pos) => {
         const loc = {
@@ -79,7 +102,7 @@ export default function MapWithBanners() {
       });
     }
 
-    /** Restaurants laden */
+    // ----- LOAD RESTAURANTS -----
     const res = await fetch("/api/restaurants/public");
     const restaurants = await res.json();
 
@@ -101,12 +124,14 @@ export default function MapWithBanners() {
 
     nearest.forEach((r) => {
       const pos = { lat: Number(r.latitude), lng: Number(r.longitude) };
+
       const marker = new window.google.maps.Marker({
         position: pos,
         map: m,
         title: r.name,
         icon: STAR_ICON,
       });
+
       bounds.extend(marker.getPosition());
 
       const infoContent = `
@@ -122,17 +147,13 @@ export default function MapWithBanners() {
           }
           ${
             r.website
-              ? `<a href="${r.website}" target="_blank">Website des Restaurants</a><br/>`
+              ? `<a href="${r.website}" target="_blank">Website besuchen</a><br/>`
               : ""
           }
-          ${
-            r.phone
-              ? `<a href="tel:${r.phone}">Mittagstisch telefonisch erfragen</a><br/>`
-              : ""
-          }
+          ${r.phone ? `<a href="tel:${r.phone}">Anrufen</a><br/>` : ""}
           <a href="https://www.google.com/maps/dir/?api=1&destination=${
             r.latitude
-          },${r.longitude}" target="_blank">Route mit Google Maps starten</a>
+          },${r.longitude}" target="_blank">Route starten</a>
         </div>
       `;
 
@@ -142,12 +163,11 @@ export default function MapWithBanners() {
 
     if (nearest.length > 0) m.fitBounds(bounds);
 
-    /** Banner in der Nähe laden */
-    fetchBanners(userLocation.lat, userLocation.lng);
+    fetchNearbyAds(userLocation.lat, userLocation.lng);
   }
 
-  /** Banner laden */
-  async function fetchBanners(lat, lng) {
+  // ----- AD LOADING -----
+  async function fetchNearbyAds(lat, lng) {
     let radius = 50000;
     let found = [];
 
@@ -159,32 +179,40 @@ export default function MapWithBanners() {
       radius *= 2;
     }
 
-    if (!found || found.length === 0) {
-      setBanners([]);
+    if (found.length > 0) {
+      setBanners(found);
+      setMode("nearby");
       return;
     }
 
-    const withDistance = found.map((ad) => ({
-      ...ad,
-      distance: haversine(lat, lng, ad.lat, ad.lng),
-    }));
-
-    withDistance.sort((a, b) => a.distance - b.distance);
-
-    setBanners(withDistance);
-    setCurrentBannerIndex(0);
+    fetchAdminAds();
   }
 
-  /** Banner-Rotation */
+  async function fetchAdminAds() {
+    const res = await fetch("/api/ads/admin");
+    const ads = await res.json();
+
+    if (ads && ads.length > 0) {
+      setAdminBanners(ads);
+      setMode("admin");
+      return;
+    }
+
+    setMode("google");
+  }
+
+  // ----- ROTATE BANNERS -----
   useEffect(() => {
-    if (!banners || banners.length === 0) return;
+    const list = mode === "nearby" ? banners : adminBanners;
+
+    if (!list || list.length === 0) return;
 
     const interval = setInterval(() => {
-      setCurrentBannerIndex((prev) => (prev + 1) % banners.length);
-    }, 10000);
+      setCurrentBannerIndex((prev) => (prev + 1) % list.length);
+    }, 8000);
 
     return () => clearInterval(interval);
-  }, [banners]);
+  }, [mode, banners, adminBanners]);
 
   return (
     <div>
@@ -200,7 +228,7 @@ export default function MapWithBanners() {
         }}
       />
 
-      {/* Banner-Bereich */}
+      {/* Banner ABOVE MAP */}
       <div
         style={{
           width: "100%",
@@ -209,22 +237,16 @@ export default function MapWithBanners() {
           height: 150,
         }}
       >
-        {banners.length === 0 && <div>Keine Werbung in deiner Nähe</div>}
-
-        {banners.length > 0 && (
+        {mode === "admin" && adminBanners.length > 0 && (
           <a
-            href={banners[currentBannerIndex].ctaUrl || "#"}
+            href={adminBanners[currentBannerIndex].ctaUrl || "#"}
             target="_blank"
             rel="noreferrer"
-            style={{
-              display: "block",
-              position: "relative",
-              height: "100%",
-            }}
+            style={{ display: "block", height: "100%" }}
           >
             <img
-              src={banners[currentBannerIndex].imageUrl}
-              alt="Werbebanner"
+              src={adminBanners[currentBannerIndex].imageUrl}
+              alt="Werbung"
               style={{
                 width: "100%",
                 height: "100%",
@@ -232,46 +254,98 @@ export default function MapWithBanners() {
                 borderRadius: 8,
               }}
             />
-
-            {typeof banners[currentBannerIndex].distance === "number" && (
-              <span
-                style={{
-                  position: "absolute",
-                  bottom: 8,
-                  right: 8,
-                  background: "rgba(0,0,0,0.7)",
-                  color: "#fff",
-                  padding: "4px 8px",
-                  borderRadius: 4,
-                  fontSize: 12,
-                }}
-              >
-                {banners[currentBannerIndex].distance.toFixed(1)} km
-              </span>
-            )}
-
-            {banners[currentBannerIndex].createdBy === "admin" && (
-              <span
-                style={{
-                  position: "absolute",
-                  top: 8,
-                  left: 8,
-                  background: "orange",
-                  padding: "4px 8px",
-                  borderRadius: 4,
-                  fontWeight: 700,
-                  fontSize: 12,
-                }}
-              >
-                PROMO
-              </span>
-            )}
           </a>
+        )}
+
+        {mode === "nearby" && banners.length > 0 && (
+          <a
+            href={banners[currentBannerIndex].ctaUrl || "#"}
+            target="_blank"
+            rel="noreferrer"
+            style={{ display: "block", height: "100%" }}
+          >
+            <img
+              src={banners[currentBannerIndex].imageUrl}
+              alt="Werbung"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                borderRadius: 8,
+              }}
+            />
+          </a>
+        )}
+
+        {mode === "google" && (
+          <div
+            style={{
+              width: "100%",
+              height: 150,
+              background: "#eee",
+              borderRadius: 8,
+            }}
+          >
+            {/* Google Ads Placeholder */}
+          </div>
         )}
       </div>
 
-      {/* Karte */}
+      {/* MAP */}
       <div ref={mapRef} style={{ width: "100%", height: 500 }} />
+
+      {/* Banner UNDER MAP */}
+      <div
+        style={{
+          width: "100%",
+          maxWidth: 600,
+          margin: "10px auto",
+          height: 150,
+        }}
+      >
+        {mode === "admin" &&
+          adminBanners.length > 1 &&
+          adminBanners.map((b, i) => (
+            <img
+              key={i}
+              src={b.imageUrl}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                borderRadius: 8,
+                display: i === currentBannerIndex ? "block" : "none",
+              }}
+            />
+          ))}
+
+        {mode === "nearby" &&
+          banners.length > 1 &&
+          banners.map((b, i) => (
+            <img
+              key={i}
+              src={b.imageUrl}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                borderRadius: 8,
+                display: i === currentBannerIndex ? "block" : "none",
+              }}
+            />
+          ))}
+
+        {mode === "google" && (
+          <div
+            style={{
+              width: "100%",
+              height: 150,
+              background: "#eee",
+              borderRadius: 8,
+            }}
+          />
+        )}
+      </div>
     </div>
   );
 }
