@@ -1,45 +1,27 @@
-import prisma from "../../../lib/prisma";
-import bcrypt from "bcryptjs"; // ← WICHTIG: bcryptjs statt bcrypt!
-import cookie from "cookie";
+// pages/api/admin/login.js
+import { serialize } from "cookie";
 
-export default async function handler(req, res) {
+export default function handler(req, res) {
   if (req.method !== "POST") {
-    return res.status(405).json({ message: "Method not allowed" });
+    return res.status(405).json({ error: "Only POST allowed" });
   }
 
-  const { username, password } = req.body;
-  if (!username || !password) {
-    return res.status(400).json({ message: "Bitte Benutzername und Passwort eingeben." });
+  const { password } = req.body;
+
+  // 🔐 HARDCODED ADMIN PASSWORT
+  if (password !== "BSchlemmerAdmin") {
+    return res.status(401).json({ error: "Falsches Passwort" });
   }
 
-  try {
-    const admin = await prisma.admin.findUnique({
-      where: { username },
-    });
+  // Cookie setzen (gültig 7 Tage)
+  const cookie = serialize("admin_session", "active", {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "strict",
+    maxAge: 60 * 60 * 24 * 7,
+    path: "/",
+  });
 
-    if (!admin) {
-      return res.status(401).json({ message: "Ungültige Zugangsdaten." });
-    }
-
-    const isValid = await bcrypt.compare(password, admin.password);
-    if (!isValid) {
-      return res.status(401).json({ message: "Ungültige Zugangsdaten." });
-    }
-
-    const token = Buffer.from(`${admin.username}:${Date.now()}`).toString("base64");
-
-    res.setHeader("Set-Cookie", cookie.serialize("admin_token", token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "strict",
-      path: "/",
-      maxAge: 60 * 60 * 12 // 12h Login
-    }));
-
-    return res.status(200).json({ message: "Login erfolgreich." });
-
-  } catch (error) {
-    console.error("Login Fehler:", error);
-    return res.status(500).json({ message: "Serverfehler." });
-  }
+  res.setHeader("Set-Cookie", cookie);
+  return res.status(200).json({ success: true });
 }

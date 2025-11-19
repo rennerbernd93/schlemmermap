@@ -1,3 +1,5 @@
+// prisma/schema.prisma
+
 generator client {
   provider = "prisma-client-js"
 }
@@ -15,21 +17,22 @@ model Restaurant {
   menuUrl   String?
   website   String?
   phone     String?
+  active    Boolean  @default(true)
   createdAt DateTime @default(now())
 }
 
 model Ad {
-  id           Int       @id @default(autoincrement())
-  imageUrl     String
-  ctaUrl       String?
-  lat          Float?
-  lng          Float?
-  radius       Int?      @default(50000)
-  createdBy    String    @default("admin")
-  paymentStatus String?  @default("pending")
-  isActive     Boolean   @default(true)
-  expiresAt    DateTime?
-  createdAt    DateTime  @default(now())
+  id            Int       @id @default(autoincrement())
+  imageUrl      String
+  ctaUrl        String?
+  lat           Float?
+  lng           Float?
+  radius        Int?      @default(50000)
+  createdBy     String    @default("admin")
+  paymentStatus String?   @default("pending")
+  isActive      Boolean   @default(true)
+  expiresAt     DateTime?
+  createdAt     DateTime  @default(now())
 }
 
 model PasswordRequest {

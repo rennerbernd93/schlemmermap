@@ -4,9 +4,9 @@ export default async function handler(req, res) {
   const admin = req.cookies.admin;
   if (!admin) return res.status(401).json({ error: "Unauthorized" });
 
-  const restaurants = await prisma.restaurant.findMany({
-    orderBy: { id: "desc" }
-  });
+  const { id } = req.body;
 
-  res.json(restaurants);
+  await prisma.restaurant.delete({ where: { id: Number(id) } });
+
+  res.json({ success: true });
 }

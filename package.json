@@ -9,6 +9,7 @@
     "postinstall": "prisma generate"
   },
   "dependencies": {
+    "@googlemaps/js-api-loader": "^2.0.2",
     "@paypal/react-paypal-js": "^8.9.2",
     "@prisma/client": "^6.19.0",
     "@supabase/supabase-js": "^2.39.0",
